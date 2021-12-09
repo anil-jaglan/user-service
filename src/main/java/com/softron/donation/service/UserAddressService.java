@@ -6,10 +6,10 @@ import com.softron.donation.dto.UserAddressDTO;
 
 public interface UserAddressService {
 
-	Optional<UserAddressDTO> getByUserId(Long userId);
+    Optional<UserAddressDTO> getByUserId(Long userId);
 
-	void save(UserAddressDTO userAddress);
+    UserAddressDTO save(UserAddressDTO userAddress);
 
-	void delete(Long id);
+    void delete(Long id);
 
 }

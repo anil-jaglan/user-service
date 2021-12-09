@@ -21,17 +21,17 @@ public class UserAddress implements Serializable {
     private static final long serialVersionUID = 34489010671893993L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long id;
 
     @Column(name = "USER_ID", nullable = false, updatable = false)
     private Long userId;
 
-    @Column(name = "HOUSE_NO", nullable = false)
+    @Column(name = "HOUSE_NO", length = 100, nullable = false)
     private String houseNo;
 
-    @Column(name = "STREET", nullable = false)
+    @Column(name = "STREET", length = 255, nullable = false)
     private String street;
 
     @Column(name = "STATE", nullable = false)
@@ -42,6 +42,9 @@ public class UserAddress implements Serializable {
 
     @Column(name = "LOCALITY", nullable = false)
     private Integer locality;
+
+    @Column(name = "LANDMARK", length = 255)
+    private String landmark;
 
     @Column(name = "PINCODE", nullable = false)
     private Integer pincode;
@@ -56,6 +59,6 @@ public class UserAddress implements Serializable {
     private LocalDateTime updatedOn;
 
     @Version
-    private int version;
+    private Integer version;
 
 }
